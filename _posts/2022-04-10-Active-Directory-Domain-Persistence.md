@@ -1,7 +1,9 @@
 ---
 title : "Active Directory - Domain Persistence"
 author: Bhaskar Pal
-date: 2022-04-10 12:12:00 +0010
+date: 2022-04-10 01:45:00 +0010
+categories: [Red-Teaming, Active-Directory-Domain-Persistence]
+tags: [active-directory,amsi-bypass,active-directory-domain-persistence]
 ---
 
 ![image](https://user-images.githubusercontent.com/59029171/162562772-f1cf1862-cf6e-4b78-9017-e70c1f1801b9.png)
