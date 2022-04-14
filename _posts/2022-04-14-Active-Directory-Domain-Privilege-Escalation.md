@@ -358,9 +358,9 @@ which the user tokens can be forwarded. on
 1. A user - X, authenticates to the web service (running with service account websvc) using a non-Kerberos compatible authentication mechanism.
 2. The web service requests a ticket from the Key Distribution Center (KDC) for X's account without supplying a password, as the websvc account.
 3. The KDC checks the websvc userAccountControl value for the TRUSTED_TO_AUTHENTICATE_FOR_DELEGATION attribute, and that X's account is not blocked for delegation. If OK it returns a forwardable ticket for X's account (S4U2Self).
-4. The service then passes this ticket back to the KDC and requests a service ticket for the CIFS/dcorp-mssql.dollarcorp.moneycorp.local service.
-5. The KDC checks the msDS-AllowedToDelegateTo field on the websvc account. If the service is listed it will return a service ticket for dcorp-mssql (S4U2Proxy). 
-6. The web service can now authenticate to the CIFS on dcorp-mssql as X using the supplied TGS.
+4. The service then passes this ticket back to the KDC and requests a service ticket for the CIFS/domain-here.
+5. The KDC checks the msDS-AllowedToDelegateTo field on the web service account. If the service is listed it will return a service ticket for requested service (S4U2Proxy). 
+6. The web service can now authenticate to the CIFS on requested service as X using the supplied TGS.
 
 ## <span style="color:lightgreen">Methodology/Steps</span>
 
@@ -371,7 +371,7 @@ which the user tokens can be forwarded. on
 - [x] 5. Now request a TGS with the 2nd step and 4th step values as parameters in */service* and */tgt*
 - [x] 6. Keep a note of the TGS return Ticket
 - [x] 7. Now we can inject the TGS return Ticket with **Inkove-Mimikatz**
-- [x] 8. We can now list the file systems of that account. Example : **`ls \\dc-mysql\C$`** but *can not* use any **WMI-Commands**
+- [x] 8. We can now list the file systems of that account. Example : **`ls \\dc-account\C$`** but *can not* use any **WMI-Commands**
 - [x] 10. But if the user DC we can do the same process and then do a **DCSync** attack
 
 
