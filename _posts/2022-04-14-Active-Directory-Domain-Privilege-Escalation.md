@@ -94,7 +94,6 @@ python.exe .\tgsrepcrack.py .\10k-worst-pass.txt .\file-name-which-got-exported.
 - [x] 3. Do a AS-REP request against the user and capture the hash
 - [x] 4. Use JTR to crack the hash
 
----
 
 ## <span style="color:lightgreen">PowerView Dev</span>
 
@@ -216,6 +215,9 @@ python.exe .\tgsrepcrack.py .\10k-worst-pass.txt .\file-name-which-got-exported.
 * Please note that, for the above example, the service account for web service must be trusted for delegation to be able to make requests as a user.
 
 ## <span style="color:lightgreen">A Quick Explanation</span>
+
+![uc-del](https://user-images.githubusercontent.com/59029171/163350877-ac24527c-23ed-4750-bcf0-35fccc7c65e3.png)
+
 1. A user provides credentials to the Domain Controller.
 2. The DC returns a TGT.
 3. The user requests a TGS for the web service on Web Server.
@@ -351,6 +353,8 @@ which the user tokens can be forwarded. on
 
 ## <span style="color:lightgreen">A Quick Explanation</span>
 
+![c-del](https://user-images.githubusercontent.com/59029171/163352158-2be581e1-57c4-4ba1-a809-49fc00e0d5d8.png)
+
 1. A user - X, authenticates to the web service (running with service account websvc) using a non-Kerberos compatible authentication mechanism.
 2. The web service requests a ticket from the Key Distribution Center (KDC) for X's account without supplying a password, as the websvc account.
 3. The KDC checks the websvc userAccountControl value for the TRUSTED_TO_AUTHENTICATE_FOR_DELEGATION attribute, and that X's account is not blocked for delegation. If OK it returns a forwardable ticket for X's account (S4U2Self).
@@ -424,8 +428,7 @@ ls \\dc-name-here\C$
 
 ## <span style="color:lightgreen">Using Rubeus.exe - Users</span>
 
-### <span style="color:#F1C232">1. We request a TGT for userX using its NTLM hash to get a TGS for userX as the Domain Administrator - Administrator. Then the TGS used to access the service specified in the /msdsspn parameter (which is the filesystem on dc-child)
-</span>
+### <span style="color:#F1C232">1. We request a TGT for userX using its NTLM hash to get a TGS for userX as the Domain Administrator - Administrator. Then the TGS used to access the service specified in the /msdsspn parameter (which is the filesystem on dc-child)</span>
 
 ```powershell
 .\Rubeus.exe s4u /user:userX /rc4:rc4-hash-here /impersonateuser:Administrator /msdsspn:"CIFS/dc-child.child-domain.root-domain.LOCAL" /ptt
@@ -513,5 +516,4 @@ We can edit the source code of **kdns.c** from *mikikatz* source code and add ou
 If you find my articles interesting, you can buy me a coffee 
 
 <a href="https://www.buymeacoffee.com/0xStarlight"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me an OSCP?&emoji=&slug=0xStarlight&button_colour=b86e19&font_colour=ffffff&font_family=Poppins&outline_colour=ffffff&coffee_colour=FFDD00" /></a>
-
 
