@@ -182,8 +182,8 @@ schtasks /Run /S <target-domain-user-dc> /TN "pwned"
 # <span style="color:lightblue">Tools Used</span>
 
 1. Invoke-Mimikatz.ps1 download from here : [https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Invoke-Mimikatz.ps1](https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Invoke-Mimikatz.ps1)
-2. asktgs_compiled from here : [https://github.com/NotScortator/asktgs_compiled](https://github.com/NotScortator/asktgs_compiled)
-2. Rubeus.exe from here : [https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Rubeus.exe](https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Rubeus.exe)
+2. asktgs_compiled download from here : [https://github.com/NotScortator/asktgs_compiled](https://github.com/NotScortator/asktgs_compiled)
+2. Rubeus.exe download from here : [https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Rubeus.exe](https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Rubeus.exe)
 
 If you find my articles interesting, you can buy me a coffee 
 
