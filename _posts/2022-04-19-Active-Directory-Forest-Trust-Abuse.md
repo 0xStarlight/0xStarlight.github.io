@@ -56,7 +56,7 @@ Now you know what forest trust is and know how to identify it, let's begin with 
 ## <span style="color:lightgreen">3. and 4. Client receives inter-realm TGT</span>
 
 1. The client receives the TGT, sends it back to the DC and requests a Ticket Granting Service(TGS) service of a **different forest**.
-2. Once the DC discovers the TGS is to access the services from a different external forest with a bi-directional trust, it resends an inter-realm TGT to the client.
+2. Once the DC discovers the work of TGS is to access the services from a different external forest with a bi-directional trust, it resends an inter-realm TGT to the client.
 
 ## <span style="color:lightgreen">5. and 6. Client receives TGS from external forest</span>
 
