@@ -149,8 +149,7 @@ ls \\<target-domain-user-dc>\C$
 - [x] 3. Note the SID of the current Domain, SID of the target Domain.
 - [x] 4. We can forge a inter-realm TGT using a Golden Ticket. Remember to add `-519` after the `sids` parameter to forge privileges as an Enterprise Administrator.
 - [x] 5. Now Inject the TGS in the memory
-- [x] 6. Now Inject the TGS in the memory.
-- [x] 7. We can create a schedule and execute a task to get a shell as enterprise admin.
+- [x] 6. We can create a schedule and execute a task to get a shell as enterprise admin.
 
 
 ### <span style="color:#F1C232">1. Perform a DCSync attack for getting krbtg hash. Execute the below command with DC privileges</span>
