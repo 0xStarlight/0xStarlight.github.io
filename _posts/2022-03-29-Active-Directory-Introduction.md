@@ -173,7 +173,7 @@ Get-GPO -Guid AB306569-220D-43FF-B03B-83E8F4EF8081 (GroupPolicy module)
 ```
 # Access Control List
 
-![image](https://user-images.githubusercontent.com/59029171/160578492-daf453d1-3f57-4bf8-927a-9b004f45c880.png)
+![image](https://user-images.githubusercontent.com/59029171/164161991-a6f77db6-fb0f-47c9-a609-a62a08143808.png)
 
 The **Access Control Model** enables control on the ability of a process to access objects and other resources in active directory based on:
 * Access Tokens (security context of a process — identity and privs of user)
@@ -274,18 +274,18 @@ The users and groups that are inside of an Active Directory are up to you; when 
 
 ## One-way trust 
 * One-way trust — Unidirectional. Users in the trusted domain can access resources in the trusting domain but the reverse is not true.
-![image](https://user-images.githubusercontent.com/59029171/160580270-dca5dd0e-12d6-48fa-88c6-92f7eda4399e.png)
+![image](https://user-images.githubusercontent.com/59029171/164159773-9c61730c-563c-41c8-bd78-7c2d5e994d10.png)
 
 ## Two-way trusts
 * Two-way trust — Bi-directional. Users of both domains can access resources in the other domain.
-![image](https://user-images.githubusercontent.com/59029171/160580386-f29d6b31-4956-4a17-8241-32ce90788026.png)
+![image](https://user-images.githubusercontent.com/59029171/164161276-46f922ed-8807-4f43-9463-2093873b92b0.png)
 
 ## Trust Transitivity
 * Transitive : Can be extended to establish trust relationships with other domains.
 	* All the default intra-forest trust relationships (Tree-root, Parent-Child) between domains within a same forest are transitive two-way trusts.
 * Nontransitive — Cannot be extended to other domains in the forest. Can be two-way or one-way.
 	* This is the default trust (called external trust) between two domains in different forests when forests do not have a trust relationship.
-![image](https://user-images.githubusercontent.com/59029171/160580477-ab13219b-aabb-4096-a274-1267e4a6aecb.png)
+![image](https://user-images.githubusercontent.com/59029171/164161621-56503d9e-03f8-41c9-973e-81e47220a77e.png)
 
 ## PowerView Enumeration
 
