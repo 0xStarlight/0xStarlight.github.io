@@ -15,7 +15,7 @@ tags: [network,MariaDB,password-reuse,Internal,IPMI,CVE-Exploitation,CVE-2021-27
 # <span style="color:lightblue">Recon</span>
 ## <span style="color:lightgreen">Nmap</span>
 
-The first thing that I do is run nmap scan enumerating tcp and udp that show this results:
+The first thing that I do is run nmap scan enumerating tcp and udp that show this results :
 
 ```console
 0xStarlight@kali$ nmap -sC -sV -Pn 10.10.11.124 -vv > nmap_tcp_scan.conf
