@@ -6,7 +6,8 @@ categories: [Red-Teaming-Exams]
 tags: [active-directory,CRTE-exam]
 ---
 
-![](../assets/post_img/crte-header.png)
+![crte-header](https://github.com/0xStarlight/0xStarlight.github.io/assets/59029171/830560ee-4dae-48bc-ab60-28dedfb8745e)
+
 
 # <span style="color:lightblue">Introduction</span>
 
@@ -16,7 +17,8 @@ Throughout my preparation and examination process, I encountered numerous challe
 
 # <span style="color:lightblue">Preperation</span>
 
-<img src="../assets/post_img/exam-prep.gif" />
+![exam-prep](https://github.com/0xStarlight/0xStarlight.github.io/assets/59029171/c3c0326f-0e45-4083-8b3d-8467f6a28b63)
+
 
 When preparing for the CRTE exam, it's essential to establish a strong foundation in red teaming concepts and techniques. Red teaming involves simulating real-world attacks to identify vulnerabilities within an organization's security infrastructure. To ensure a smoother transition into CRTE, I recommend completing the CRTP (Certified Red Team Professional) certification first.
 
@@ -43,13 +45,15 @@ The "Bootcamp" option, is a 4-day workshop conducted weekly, with each session l
 
 The "On Demand" option grants you access to the lab environment for your choice, ranging from 30 to 90 days. Priced at $299 for the 30-day access, this option includes all the necessary tools and a lab PDF that is solved using PowerShell. Additionally, the lab is solved using the C2 framework "Covalent." In the "On Demand" option, students are expected to work independently on the lab challenges. However, if you encounter any difficulties, you can seek assistance by contacting the support team via email or by engaging with fellow students in the dedicated Discord group.
 
-<img src="../assets/post_img/LabDiagram.png" />
+![LabDiagram](https://github.com/0xStarlight/0xStarlight.github.io/assets/59029171/3225e553-99b2-4216-9004-5d4bb784f2c2)
+
 
 I opted for the "On Demand" option and immediately began my lab journey after purchasing it on June 29th. The lab consists of 22 machines distributed across 8 forests, encompassing advanced attack scenarios. These scenarios cover various topics, including abuse of Kerberos Delegation, PAM Trust Abuse, LAPS, Dimond Tickets, MSSQL Abuse, Certificate Services, Shadow Credentials, and more. Additionally, the lab contains a total of 60 flags to discover. 
 
 Remarkably, I completed all the flags within 48 hours, spanning 4 days. To ensure I captured all the vital details, I diligently took comprehensive notes using Obsidian, documenting the attack techniques I utilized and the corresponding commands. In the end, you also have the option to tweet about the lab completion.
 
-<img src="../assets/post_img/crte_flags_pwn.png" />
+![crte_flags_pwn](https://github.com/0xStarlight/0xStarlight.github.io/assets/59029171/c0509b4e-aa6b-43c6-91a9-5c0dc9cca074)
+
 
 # <span style="color:lightblue">Exam Experience</span>
 
@@ -64,7 +68,8 @@ By adhering to these requirements and presenting a well-documented report, you c
 
 During my CRTE exam journey, I commenced the examination on July 6th around 12:30 PM. The exam would end in 48 hours and would have an extra 48 hours to submit the reort.
 
-<img src="../assets/post_img/exam-start-img.jpg" />
+![exam-start-img](https://github.com/0xStarlight/0xStarlight.github.io/assets/59029171/ee3bfeb4-2ec9-4ec0-a40a-57ad8c9701e7)
+
 
 The initial compromise of the first machine proved to be relatively straightforward, requiring adherence to the basic attack methodology that eventually led me to discover something intriguing. I could attain a reverse shell on the target system by leveraging this discovery.
 
@@ -78,13 +83,15 @@ Lastly, the fifth machine followed a similar pattern of relative ease, with the 
 
 I completed the CRTE exam in just 17 hours and submitted the accompanying report within 24 hours. 
 
-<img src="../assets/post_img/exam-end" />
+![exam-end](https://github.com/0xStarlight/0xStarlight.github.io/assets/59029171/b72847fe-a1cc-44b7-9522-2f6c2d4fa63c)
+
 
 Although I admittedly spent some time exploring non-essential aspects, those who approach the exam more directly can reasonably expect to finish within 6 to 9 hours. By staying focused and minimizing distractions, candidates can optimize their exam experience and achieve efficient results.
 
 ## <span style="color:lightgreen">Exam Review</span>
 
-<img src="../assets/post_img/exam-exp.jpg" />
+![exam-exp](https://github.com/0xStarlight/0xStarlight.github.io/assets/59029171/b7eb8d7c-5e9f-4b89-ada0-862ce2a73636)
+
 
 Reflecting on my exam experience, I can't help but recall a popular meme that perfectly encapsulates it all. While the CRTE course delved into numerous advanced attack vectors, it was interesting that those specific vectors weren't prominently featured in the exam. It's important to emphasize that this doesn't necessarily imply that the exam was more challenging or straightforward. Instead, what truly mattered was a comprehensive understanding of the methodology and a strategic approach when dealing with an Active Directory environment.
 
@@ -111,13 +118,14 @@ Feel free to check out my cheat sheet for CRTE exam on my github [CRTE-NOTES](ht
 
 # <span style="color:lightblue">Conclusion</span>
 
-In conclusion, undertaking the CRTE lab and exam proved to be a rewarding experience. The lab environment provided an excellent platform for practical application, allowing me to exercise the attack vectors covered in the course and explore various chained attacks. Throughout the lab, the support team demonstrated exceptional responsiveness, promptly addressing any lab-related issues and assisting whenever I encountered challenges.
+In conclusion, undertaking the CRTE lab and exam proved to be a rewarding experience. The lab environment provided an excellent platform for practical application, allowing me to exercise the attack vectors covered in the course and explore various chained attacks. The support team demonstrated exceptional responsiveness throughout the lab, promptly addressing any lab-related issues and assisting whenever I encountered challenges.
 
-Transitioning to the exam phase, the difficulty level was relatively moderate. With a diligent research approach and well-established methodology, I could successfully navigate the exam. The exam tested not only my technical knowledge but also my ability to apply that knowledge in a methodical manner.
+Transitioning to the exam phase, the difficulty level was relatively moderate. I could successfully navigate the exam with a diligent research approach and well-established methodology. The exam tested not only my technical knowledge but also my ability to apply that knowledge in a methodical manner.
 
 After eagerly awaiting the results, I received the outcome via email after a week, and to my delight, I learned that I had passed the exam! 
 
-<img src="../assets/post_img/Bhaskarpal_CRTE.jpg" />
+![Bhaskarpal_CRTE](https://github.com/0xStarlight/0xStarlight.github.io/assets/59029171/95dc4a8a-84f3-400e-8268-54b4f4b9e9ba)
+
 
 If you find my articles interesting, you can buy me a coffee 
 
