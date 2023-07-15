@@ -2,7 +2,7 @@
 title : "CRTE Exam Review"
 author: Bhaskar Pal
 date: 2023-07-15 07:23:00 +0530
-categories: [Red-Teaming-Exams]
+categories: [Red-Teaming-Exams,CRTE-Review]
 tags: [active-directory,CRTE-exam]
 ---
 
