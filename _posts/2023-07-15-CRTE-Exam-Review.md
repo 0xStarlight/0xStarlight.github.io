@@ -15,7 +15,7 @@ I am thrilled to announce that I have successfully passed the CRTE (Certified Re
 
 Throughout my preparation and examination process, I encountered numerous challenges, gained invaluable insights, and developed a deeper understanding of the red teaming discipline. This blog aims to provide a comprehensive account of my experiences, shedding light on the preparation strategies, lab reviews, and the exam itself. Moreover, I will share tips and techniques that I found helpful in conquering the CRTE exam, offering guidance to those who aspire to follow a similar path.
 
-# <span style="color:lightblue">Preperation</span>
+# <span style="color:lightblue">Preparation</span>
 
 ![exam-prep](https://github.com/0xStarlight/0xStarlight.github.io/assets/59029171/c3c0326f-0e45-4083-8b3d-8467f6a28b63)
 
@@ -43,7 +43,7 @@ The "Bootcamp" option, is a 4-day workshop conducted weekly, with each session l
 
 ## <span style="color:lightgreen">On Demand</span>
 
-The "On Demand" option grants you access to the lab environment for your choice, ranging from 30 to 90 days. Priced at $299 for the 30-day access, this option includes all the necessary tools and a lab PDF that is solved using PowerShell. Additionally, the lab is solved using the C2 framework "Covalent." In the "On Demand" option, students are expected to work independently on the lab challenges. However, if you encounter any difficulties, you can seek assistance by contacting the support team via email or by engaging with fellow students in the dedicated Discord group.
+The "On Demand" option grants you access to the lab environment for your choice, ranging from 30 to 90 days. Priced at $299 for the 30-day access, this option includes all the necessary tools and a lab PDF that is solved using PowerShell. Additionally, the lab is solved using the C2 framework "Covenant". In the "On Demand" option, students are expected to work independently on the lab challenges. However, if you encounter any difficulties, you can seek assistance by contacting the support team via email or by engaging with fellow students in the dedicated Discord group.
 
 ![LabDiagram](https://github.com/0xStarlight/0xStarlight.github.io/assets/59029171/3225e553-99b2-4216-9004-5d4bb784f2c2)
 
