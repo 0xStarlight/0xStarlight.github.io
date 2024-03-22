@@ -1,3 +1,10 @@
+---
+title : "Active Directory - Introduction"
+author: Bhaskar Pal
+date: 2022-03-29 15:06:00 +0800
+categories: [Red-Teaming, Active-Directory-Introduction]
+tags: [active-directory,active-directory-introduction]
+---
 
 ![image](https://user-images.githubusercontent.com/59029171/160552244-aee00f26-2255-4da7-8187-ce5e29d9eed9.png)
 
